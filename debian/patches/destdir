@@ -1,0 +1,11 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -9,7 +9,7 @@
+ 	@APXS@ -n mod_ip -o mod_ip.la -c mod_ip.c ip2asn.c $(CFLAGS) $(LDFLAGS) $(LDLIBS)
+ 	
+ install:
+-	@APXS@ -n mod_ip -i mod_ip.la
++	@APXS@ -n mod_ip -S LIBEXECDIR=${DESTDIR}/usr/lib/apache2/modules -i mod_ip.la
+ 	cat README.configuration
+ 
+ clean:

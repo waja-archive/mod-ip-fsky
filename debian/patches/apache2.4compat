@@ -1,0 +1,24 @@
+--- a/mod_ip.c
++++ b/mod_ip.c
+@@ -120,6 +120,12 @@
+ 
+ #define ASNLIST_LENGTH 64
+ 
++#if AP_SERVER_MAJORVERSION_NUMBER > 2 || \
++    (AP_SERVER_MAJORVERSION_NUMBER == 2 && AP_SERVER_MINORVERSION_NUMBER >= 4)
++#define CLIENT_IP(conn) ((conn)->client_ip)
++#else
++#define CLIENT_IP(conn) ((conn)->remote_ip)
++#endif
+ 
+ typedef struct mod_ip_request_t
+ {
+@@ -349,7 +355,7 @@
+ 	char *padding = ",\"padding\":\"";
+ 	char *p = NULL;
+ 	int added = 0;
+-	char *myip = r->connection->remote_ip;
++	char *myip = CLIENT_IP(r->connection);
+ 	char *mytype = "ipv4";
+ 	char *mysubtype = "";
+ 	char *VIA = "";

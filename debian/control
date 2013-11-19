@@ -1,0 +1,16 @@
+Source: mod-ip-fsky
+Section: web
+Priority: extra
+Maintainer: Jan Wagner <waja@cyconet.org>
+Build-Depends: debhelper (>= 5), dh-apache2, apache2-dev, autotools-dev
+Standards-Version: 3.9.5
+Homepage: https://code.google.com/p/falling-sky/wiki/InstallModIP
+
+Package: libapache2-mod-ip-fsky
+Architecture: any
+Depends: apache2.2-common (>= 2.2.3-2), ${shlibs:Depends}, ${misc:Depends}
+Description: Apache module reporting user IP as a JSONP response.
+ This Apache module reports the IP the user came from, as a JSONP response.
+ GET requests required; CGI style arguments are permitted.
+ .
+ The primary use of this module is to implement a test-ipv6.com intance.
