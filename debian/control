@@ -4,6 +4,8 @@ Priority: extra
 Maintainer: Jan Wagner <waja@cyconet.org>
 Build-Depends: debhelper (>= 5), apache2-dev | apache2-threaded-dev, autotools-dev
 Standards-Version: 3.9.5
+Vcs-Git: git://github.com/waja/mod-ip-fsky.git
+Vcs-Browser: http://github.com/waja/mod-ip-fsky
 Homepage: https://code.google.com/p/falling-sky/wiki/InstallModIP
 
 Package: libapache2-mod-ip-fsky
