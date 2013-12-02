@@ -28,7 +28,7 @@ build-stamp: config.status
 	$(MAKE)
 	touch $@
 
-clean:
+clean: travis-clean
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
@@ -38,13 +38,18 @@ clean:
 	rm -f Makefile config.guess config.sub
 	dh_clean
 
-install: build
+travis-clean:
+	rm -f .travis.yml
+
+install: travis-install build
 	dh_testdir
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
 	$(MAKE) install DESTDIR=$(INSTALLDIR)
 
+travis-install:
+	cp -f debian/.travis.yml .
 
 # Build architecture-independent files here.
 binary-indep: build install
