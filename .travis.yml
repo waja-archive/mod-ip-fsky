@@ -2,7 +2,7 @@ language: c
 
 install:
     - sudo apt-get update -qq
-    - sudo apt-get install -qq debhelper libwww-perl
+    - sudo apt-get install -qq devscripts libwww-perl
     - uscan
     - sudo apt-get purge -qq libwww-perl
     - sudo apt-get install -qq debhelper devscripts apache2-dev autotools-dev
