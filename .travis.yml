@@ -6,7 +6,6 @@ install:
     - uscan --force-download
     - sudo apt-get purge -qq libwww-perl
     - sudo apt-get autoremove -qq
-    - sudo apt-get purge -qq libhtml-parser-perl libhtml-tagset-perl
     - sudo apt-get install -qq --no-install-recommends debhelper devscripts apache2-dev autotools-dev
 
 script:
