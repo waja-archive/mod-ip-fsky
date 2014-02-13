@@ -19,7 +19,7 @@ endif
 	# Add here commands to configure the package.
 	./configure --prefix=/usr --mandir=\$${prefix}/share/man
 
-build: travis-install build-arch build-indep
+build: build-arch build-indep
 build-arch: build-stamp
 build-indep: build-stamp
 
@@ -28,7 +28,7 @@ build-stamp: config.status
 	$(MAKE)
 	touch $@
 
-clean: travis-clean
+clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
@@ -38,18 +38,12 @@ clean: travis-clean
 	rm -f Makefile config.guess config.sub
 	dh_clean
 
-travis-clean:
-	rm -f .travis.yml
-
 install: build
 	dh_testdir
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
 	$(MAKE) install DESTDIR=$(INSTALLDIR)
-
-travis-install:
-	ln -fs debian/.travis.yml $(CURDIR)
 
 # Build architecture-independent files here.
 binary-indep: build install
