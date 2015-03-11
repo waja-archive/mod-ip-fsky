@@ -59,7 +59,7 @@
 #define PACKAGE_NAME "Falling Sky mod_ip"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Falling Sky mod_ip 0.1182"
+#define PACKAGE_STRING "Falling Sky mod_ip 1.0"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "mod_ip"
@@ -68,7 +68,7 @@
 #define PACKAGE_URL "http://code.google.com/p/falling-sky"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "0.1182"
+#define PACKAGE_VERSION "1.0"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1

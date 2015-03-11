@@ -120,6 +120,12 @@ const char *padding_buffer = "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldH
 
 #define ASNLIST_LENGTH 64
 
+#if AP_SERVER_MAJORVERSION_NUMBER > 2 || \
+    (AP_SERVER_MAJORVERSION_NUMBER == 2 && AP_SERVER_MINORVERSION_NUMBER >= 4)
+#define CLIENT_IP(request) ((request)->useragent_ip)
+#else
+#define CLIENT_IP(request) ((request)->connection->remote_ip)
+#endif
 
 typedef struct mod_ip_request_t
 {
@@ -349,7 +355,7 @@ gen_output (request_rec * r, struct mod_ip_request_t *formdata)
 	char *padding = ",\"padding\":\"";
 	char *p = NULL;
 	int added = 0;
-	char *myip = r->connection->remote_ip;
+	char *myip = CLIENT_IP(r);
 	char *mytype = "ipv4";
 	char *mysubtype = "";
 	char *VIA = "";
