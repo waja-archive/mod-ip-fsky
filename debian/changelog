@@ -1,3 +1,30 @@
+mod-ip-fsky (1.0.9-1~1.gbpe2c429) UNRELEASED; urgency=medium
+
+  * [01bb3f8] Adjust build-deps to also fit on wheezy
+  * [dd2da3d] Add Vcs-Headers
+  * [2b7e93b] Add configuration for travis-ci.org
+  * [feac0ed] Use uscan to download original upstream tarball for Travis CI
+  * [d28432d] Add debhelper to provide uscan for Travis CI
+  * [33baad5] Fix typo, we need devscripts
+  * [46e9332] Force to download the upstream tarball for Travis CI
+  * [3f67a37] Work around modified source of dpkg-source
+  * [83aa422] Handle symlink of .travis.yml to top level dir
+  * [6ba0407] Force creating link
+  * [69bf31a] Remove package leftovers on Travis CI
+  * [43cfceb] Don't install recommanded packages when building on Travis CI
+  * [2591fbd] Add debian/source/option with diff-ignore option
+  * [31b4abd] Even ignore changes in .git
+  * [add7a12] Remove travis ci foo
+  * [e47b619] Remove unneeded purge from travis config
+  * [effb9da] Reorder and comment .travis.yml
+  * [3ed483e] Add lintian checks after build
+  * [2ad6679] travis-ci: don't install build-deps manual
+  * [baf097a] travis-ci: build package with dpkg-buildpackage
+  * [fb63588] Updating Homepage field
+  * [10bdc4f] Imported Upstream version 1.0.9
+
+ -- Jan Wagner <waja@cyconet.org>  Wed, 11 Mar 2015 08:56:29 +0100
+
 mod-ip-fsky (0.1398-1) unstable; urgency=low
 
   * Initial release
