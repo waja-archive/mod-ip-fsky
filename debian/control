@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 5), apache2-dev | apache2-threaded-dev, autotools-d
 Standards-Version: 3.9.5
 Vcs-Git: git://github.com/waja/mod-ip-fsky.git
 Vcs-Browser: http://github.com/waja/mod-ip-fsky
-Homepage: https://code.google.com/p/falling-sky/wiki/InstallModIP
+Homepage: https://github.com/falling-sky/source/wiki/InstallModIP
 
 Package: libapache2-mod-ip-fsky
 Architecture: any
